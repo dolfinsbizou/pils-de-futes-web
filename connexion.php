@@ -1,4 +1,5 @@
 <?php
+include_once("models/sessions.php");
 if(isLogged())
 	header("Location: ./");
 else
