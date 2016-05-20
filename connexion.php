@@ -10,7 +10,7 @@ else
 		switch($_GET['err'])
 		{
 			case 1:
-				$err.= "Pseudo inconnu !";
+				$err.= "Email inconnu !";
 				break;
 			case 2:
 				$err.= "Mot de passe erroné !";
