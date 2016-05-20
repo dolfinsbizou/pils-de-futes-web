@@ -32,8 +32,6 @@
 		            </label>
 		            <button class="btn btn-theme btn-block" href="validationConnexion.php" type="submit"><i class="fa fa-lock"></i> Connexion</button>
 		            <hr>
-		            
-		            
 		            <div class="registration">
 		                Pas encore de compte ?<br/>
 		                <a class="" href="#">
