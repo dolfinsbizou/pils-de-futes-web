@@ -37,7 +37,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>BDE GESTION SOIREES</b></a>
+            <a href="index.php" class="logo"><b>BDE GESTION SOIREES</b></a>
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
@@ -69,12 +69,93 @@
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
-
-              <div class="row">
-                  <div class="col-lg-9 main-chart">
-                  </div><!-- /row -->
-              </div><! --/row -->
+          <section class="wrapper site-min-height">
+            <h3><i class="fa fa-angle-right"></i> <?= $page_title ?></h3>
+            <div class="row mt">
+              <div class="col-md-12">
+                <div class="content-panel">
+                    <h4><i class="fa fa-angle-right"></i> Soirées à voter</h4>
+                    <hr>
+                  <table class="table">
+                      <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Username</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>1</td>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                      </tr>
+                      <tr>
+                          <td>3</td>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                      </tr>
+                      </tbody>
+                  </table>
+                </div><! --/content-panel -->
+              </div><!-- /col-md-12 -->
+            </div>
+            <div class="row mt">
+              <div class="col-md-12">
+                <div class="content-panel">
+                    <h4><i class="fa fa-angle-right"></i> Soirées à venir</h4>
+                    <hr>
+                  <table class="table">
+                      <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Username</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>1</td>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                      </tr>
+                      <tr>
+                          <td>3</td>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                      </tr>
+                      </tbody>
+                  </table>
+                </div><! --/content-panel -->
+              </div><!-- /col-md-12 -->
+            </div>
+            <div class="row mt">
+              <div class="col-md-12">
+                <div class="content-panel">
+                    <h4><i class="fa fa-angle-right"></i> Historique des soirées</h4>
+                    <hr>
+                    <a class="btn btn-theme03" style="margin:0px 0px 10px 10px;" href="historiqueSoiree.php">Clique-ici pour voir l'historique des soirées</a>
+                </div><! --/content-panel -->
+              </div><!-- /col-md-12 -->
+            </div>
           </section>
       </section> 
   </section>
