@@ -1,4 +1,6 @@
 <?php
+include_once($PROJECT_ROOT . "model/connectBdd.php");
+
 //Soirees encore en vote
 function getSoireeVote()
 {

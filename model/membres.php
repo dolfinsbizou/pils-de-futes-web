@@ -1,4 +1,6 @@
 <?php
+include_once($PROJECT_ROOT . "model/connectBdd.php");
+
 //infos users
 function getInfosUsers($idMembre)
 {
