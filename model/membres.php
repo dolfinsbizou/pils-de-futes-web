@@ -40,7 +40,7 @@
 		$req->bindParam(':mdp', $mdp);
 		$req->bindParam(':nomMembre', $nomMembre);
 		$req->bindParam(':prenomMembre', $prenomMembre);
-		$req->execute();	
+		$req->execute();
 	}
 
 	function isAdmin($idMembre)
