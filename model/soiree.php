@@ -4,7 +4,6 @@ function getSoireeVote()
 {
 	$bdd = init_connection();
 	$answer = $bdd->prepare("SELECT IdSoiree,NomSoiree,DateSoiree FROM Soiree WHERE DateFermetureVote > now()");
-	//$answer->execute(array($idCard,$idUser,$idCard,$idUser));
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);	
 }
@@ -12,8 +11,7 @@ function getSoireeVote()
 function getSoiree()
 {
 	$bdd = init_connection();
-	$answer = $bdd->prepare("SELECT IdSoiree,DateSoiree FROM Soiree WHERE DateFermetureVote < now() and DateSoiree > now()");
-	//$answer->execute(array($idCard));
+	$answer = $bdd->prepare("SELECT IdSoiree,NomSoiree,DateSoiree FROM Soiree WHERE DateFermetureVote < now() and DateSoiree > now()");
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);
 }
