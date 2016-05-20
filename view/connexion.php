@@ -25,6 +25,23 @@
 		      <form class="form-login" action="validationConnexion.php">
 		        <h2 class="form-login-heading">CONNECTE TOI</h2>
 		        <div class="login-wrap">
+                    <?php if($_GET['err']) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        Erreur dans le formulaire :<br>
+                        <?php 
+                        switch($_GET['err']) :
+                            case 1 :
+                                echo '- Email incorrect';
+                                break; 
+                            case 2 :
+                                echo '- Mot de passe incorrect';
+                                break;
+                            case 3 :
+                                echo '- Cessez donc de modifier l\'URL, petit malandrin';
+                                break;
+                        endswitch; ?>
+                    </div>
+                    <?php endif;?>
 		            <input type="text" class="form-control" placeholder="Email" name="Email" autofocus>
 		            <br>
 		            <input type="password" class="form-control" name="Mdp" placeholder="Mot de passe">
