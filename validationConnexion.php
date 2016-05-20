@@ -1,8 +1,8 @@
 <?php
 include_once("model/sessions.php");
 include_once("model/membres.php");
-if(!isset($_POST['Email']) or !isExistingPseudo($_POST['Email']))
-	Header('Location: connexion.php?err=1');
+if(!isset($_POST['Email']) or !isExistingEmail($_POST['Email']))
+	header('Location: connexion.php?err=1');
 else
 {
 	$user = getInfosUsersByEmail($_POST['Email']);
@@ -11,7 +11,7 @@ else
 	$user['IdMembre'] = htmlspecialchars($user['IdMembre']);
 	$user['Admin'] = htmlspecialchars($user['Admin']);
 	if(sha1($_POST['Mdp']) != $user['Mdp'])
-		Header('Location: connexion.php?err=2');
+		header('Location: connexion.php?err=2');
 	else
 	{
 		$_SESSION['session_id'] = $user['IdMembre'];
