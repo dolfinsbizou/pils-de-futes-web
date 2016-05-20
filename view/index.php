@@ -1,7 +1,3 @@
-<?php
-$user['nom'] = "Apeuprès";
-$user['prenom'] = "Jean-Michel";
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,7 +55,7 @@ $user['prenom'] = "Jean-Michel";
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              	  <h5 class="centered"><?=$user['prenom']?> <?=$user['nom']?></h5>
+              	  <h5 class="centered"><?=$user['PrenomMembre']?> <?=$user['NomMembre']?></h5>
               	  	
                   
               </ul>
