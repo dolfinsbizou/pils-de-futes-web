@@ -79,31 +79,21 @@
                   <table class="table">
                       <thead>
                       <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
+                          <th>Nom de la soirée</th>
+                          <th>Date de la soirée</th>
+                          <th>Ouverture des votes</th>
+                          <th>Clôture des votes</th>
                       </tr>
                       </thead>
                       <tbody>
+                      <?php foreach($soireeVote as $s) :?>
                       <tr>
-                          <td>1</td>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                        <td><?= $s['NomSoiree'] ?></td>
+                        <td><?= $s['DateSoiree'] ?></td>
+                        <td><?= $s['DateOuvertureVote'] ?></td>
+                        <td><?= $s['DateFermetureVote'] ?></td>
                       </tr>
-                      <tr>
-                          <td>2</td>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                      </tr>
-                      <tr>
-                          <td>3</td>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                      </tr>
+                      <?php endforeach; ?>
                       </tbody>
                   </table>
                 </div><! --/content-panel -->
