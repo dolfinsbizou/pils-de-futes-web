@@ -24,9 +24,9 @@ function isExistingEmail($email)
 {
 	global $bdd;
 	
-	$req = $bdd->prepare('SELECT email FROM users WHERE LOWER(email) = :email');
-	$req->execute(array('email' => strtolower($email)));
-	$emails = $req->fetch(PDO::FETCH_COLUMN);
+	$req = $bdd->prepare('SELECT email FROM Membres WHERE LOWER(Email) = :Email');
+	$req->execute(array('Email' => strtolower($email)));
+	$emails = $req->fetch(PDO::FETCH_ASSOC);
 	return $emails?true:false;
 }
 
