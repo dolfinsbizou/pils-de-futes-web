@@ -2,15 +2,17 @@
 include_once("model/sessions.php");
 include_once("model/soiree.php");
 
-if(isLogged())
+if(isLogged() AND isset($_GET['idSoiree']))
 {
 	$idSoiree = $_GET['idSoiree'];
-	$data = getSoireeInfoById($idSoiree,getUserID());
+	if(!($data = getSoireeInfoById($idSoiree,getUserID())))
+	{
+		header('Location: ./');
+	}
 }else {
 	header('Location: ./');
 	exit;
 }
-
 $data['NomSoiree'] = htmlspecialchars($data['NomSoiree']);
 $data['DateSoiree'] = htmlspecialchars($data['DateSoiree']);
 
