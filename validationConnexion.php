@@ -7,7 +7,7 @@ else
 {
 	$user = getInfosUsersByEmail($_POST['Email']);
 		
-	if($_POST['Mdp'] != $user['Mdp'])
+	if(sha1($_POST['Mdp']) != $user['Mdp'])
 		header('Location: connexion.php?err=2');
 	else
 	{
