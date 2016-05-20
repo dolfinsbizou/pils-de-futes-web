@@ -22,8 +22,8 @@
   <body>
 	  <div id="login-page">
 	  	<div class="container">
-		      <form class="form-login" action="validationConnexion.php" method="post">
-		        <h2 class="form-login-heading">CONNECTE TOI</h2>
+		      <form class="form-login" action="validationInscription.php" method="post">
+		        <h2 class="form-login-heading">INSCRIS TOI</h2>
 		        <div class="login-wrap">
                     <?php if(isset($_GET['err'])) : ?>
                     <div class="alert alert-danger" role="alert">
@@ -31,31 +31,31 @@
                         <?php 
                         switch($_GET['err']) :
                             case 1 :
-                                echo '- Email incorrect';
+                                echo '- Tous les champs ne sont pas remplis';
                                 break; 
                             case 2 :
-                                echo '- Mot de passe incorrect';
+                                echo '- Les mots de passe ne correspondent pas';
                                 break;
                             case 3 :
-                                echo '- Cessez donc de modifier l\'URL, petit malandrin';
+                                echo '- Email incorrect';
+                                break;
+                            case 4 :
+                                echo '- L\'email existe déja';
                                 break;
                         endswitch; ?>
                     </div>
                     <?php endif;?>
-		            <input type="text" class="form-control" placeholder="Email" name="Email" autofocus>
+		            <input type="text" class="form-control" placeholder="Nom" name="nomMembre" autofocus>
 		            <br>
-		            <input type="password" class="form-control" name="Mdp" placeholder="Mot de passe">
+                    <input type="text" class="form-control" placeholder="Prénom" name="prenomMembre" autofocus>
+                    <br>
+                    <input type="text" class="form-control" placeholder="Email" name="email" autofocus>
+                    <br>
+		            <input type="password" class="form-control" name="mdp" placeholder="Mot de passe"><br>
+                    <input type="password" class="form-control" name="mdp_confirm" placeholder="Confirmation Mot de passe">
 		            <label class="checkbox"> <span class="pull-right"> </span>
 		            </label>
-		            <button class="btn btn-theme btn-block" href="validationConnexion.php" type="submit"><i class="fa fa-lock"></i> Connexion</button>
-		            <hr>
-		            <div class="registration">
-		                Pas encore de compte ?<br/>
-		                <a class="" href="inscription.php">
-		                    S'inscrire
-		                </a>
-		            </div>
-		
+		            <button class="btn btn-theme btn-block" href="validationInscription.php" type="submit"><i class="fa fa-lock"></i> Inscription !</button>		
 		        </div>
 		      </form>	  	
 	  	</div>
@@ -69,7 +69,7 @@
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="view/assets/js/jquery.backstretch.min.js"></script>
     <script>
-        $.backstretch("view/assets/img/login-bg.jpg", {speed: 500});
+        $.backstretch("view/assets/img/register-bg.jpg", {speed: 500});
     </script>
   </body>
 </html>
