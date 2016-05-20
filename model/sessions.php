@@ -11,7 +11,7 @@ include_once($PROJECT_ROOT . "model/tech.php");
  *   */
 function isValidD($n, $p)
 {	
-	if(($u = getUserInfoById($n)) != null)
+	if(($u = getInfoUsersById($n)) != null)
 		if($u['Mdp'] == $p)
 			return true;
 	return false;
