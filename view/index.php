@@ -71,6 +71,7 @@
                           <th>Date de la soirée</th>
                           <th>Ouverture des votes</th>
                           <th>Clôture des votes</th>
+                          <th>Vote</th>
                       </tr>
                       </thead>
                       <tbody>
@@ -88,6 +89,9 @@
                         <td>
                           <?php $date = new DateTime($s['DateFermetureVote']); ?>
                           <?= $date->format('d/m/Y').' à '.$date->format('H:i:s') ?>
+                        </td>
+                        <td>
+                          <a href="soiree.php?idSoiree=<?=$s['IdSoiree']?>" class="btn btn-theme03">Voter pour cette soirée</a>
                         </td>
                       </tr>
                       <?php endforeach; ?>
