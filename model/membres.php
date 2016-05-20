@@ -20,5 +20,14 @@ function getInfosUsersByEmail($EmailUSers)
 	$data = $answer->fetch(PDO::FETCH_ASSOC);
 	return($data);	
 }
+function isExistingEmail($email)
+{
+	global $bdd;
+	
+	$req = $bdd->prepare('SELECT email FROM users WHERE LOWER(email) = :email');
+	$req->execute(array('email' => strtolower($email)));
+	$emails = $req->fetch(PDO::FETCH_COLUMN);
+	return $emails?true:false;
+}
 
 ?>
