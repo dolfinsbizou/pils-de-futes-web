@@ -50,19 +50,7 @@
       <!-- **********************************************************************************************************************************************************
       SIDEBAR LEFT
       *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-              	  <h5 class="centered"><?=$user['PrenomMembre']?> <?=$user['NomMembre']?></h5>
-              	  	
-                  
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
+      <?php include_once('include/navbar-right.php'); ?>
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -74,7 +62,7 @@
             <div class="row mt">
               <div class="col-md-12">
                 <div class="content-panel">
-                    <h4><i class="fa fa-angle-right"></i> Soirées à venir</h4>
+                    <h4><i class="fa fa-angle-right"></i> Soirées </h4>
                     <hr>
                   <table class="table">
                       <thead>
@@ -84,7 +72,7 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <?php foreach($soireeFinVote as $s) :?>
+                      <?php foreach($historique as $s) :?>
                       <tr>
                         <td> <?= $s['NomSoiree'] ?></td>
                         <td>
