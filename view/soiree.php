@@ -78,13 +78,15 @@
                                 <input class="form-control" id="disabledInput" type="text" placeholder="<?=$date->format('d/m/Y').' à '.$date->format('H:i:s') ?>" disabled>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Email</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="disabledInput" type="text" placeholder="<?=$user['Email']?>" disabled>
-                            </div>
-                        </div>
                     </form>
+                </div><! --/content-panel -->
+                <div class="form-panel">
+                    <h4><i class="fa fa-angle-right"></i> Configurations</h4>
+                    <hr>
+                    <?php
+                    var_dump($configs);
+                    var_dump($etapes);
+                    ?>
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
             </div>
