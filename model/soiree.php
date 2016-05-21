@@ -6,7 +6,7 @@ function getSoireeVote()
 {
 	global $bdd;
 
-	$answer = $bdd->prepare("SELECT IdSoiree,NomSoiree,DateSoiree FROM Soiree WHERE DateFermetureVote > now()");
+	$answer = $bdd->prepare("SELECT IdSoiree,NomSoiree,DateSoiree,DateFermetureVote,DateOuvertureVote FROM Soiree WHERE DateFermetureVote > now()");
 	$answer->execute([]);
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);	
