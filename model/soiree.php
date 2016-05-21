@@ -54,15 +54,7 @@ function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembr
 {
 	global $bdd;
 	
-	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre) VALUES (:dateOuvertureVote, :dateFermetureVote, :dateSoiree, :idMembre)');
-	$req->execute(array(
-			'dateOuvertureVote' => $dateOuvertureVote,
-			'dateFermetureVote' => $dateFermetureVote,
-			'dateSoiree' => $dateSoiree,
-			'idMembre' => $idMembre));
+	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre) VALUES (?, ?, ?, ?)');
+	$req->execute(array($dateOuvertureVote,$dateFermetureVote,$dateSoiree,$idMembre));
 }
-<<<<<<< HEAD
 
-=======
-?>
->>>>>>> origin/master
