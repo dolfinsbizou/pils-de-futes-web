@@ -62,7 +62,7 @@
             <div class="row mt">
               <div class="col-md-12">
                 <div class="content-panel">
-                 <form class="form-login" action="ajouterConfig.php" method="post">
+                 <form class="form-login" action="ajouterConfig.php?id=<?php echo $_GET['id']; ?>" method="post">
 		        <h2 class="form-login-heading">Ajouter une Configuration</h2>
 		        <div class="login-wrap">
                     <?php if(isset($_GET['err'])) : ?>
@@ -71,43 +71,97 @@
                         <?php 
                         switch($_GET['err']) :
                             case 1 :
-                                echo '- Nom de Soirée invalide';
+                                echo '- Merci de mettre au moins une étape';
                                 break; 
-                            case 2 :
-                                echo '- Date debut vote invalide';
-                                break;
-                            case 3 :
-                                echo '- Date fin vote invalide';
-                                break;
-							case 4 :
-								echo '- Date de la Soirée invalide';
-								break;
+                            
                         endswitch; ?>
                     </div>
                     <?php endif;?>
+                    <input type="text" class="form-control" placeholder="Commentaire" name="Commentaire">
+		            <br>
+                    
+                    <hr>
+                    <p>Etape 1</p>
+                    
                     <label for="exampleSelect1">Type</label>
-                  	<select class="form-control" id="Type">
+                  	<select class="form-control" id="Type1">
                       <option>Apero</option>
                       <option>Repas</option>
                       <option>After</option>
                     </select>
 		            <br>
                     <label for="exampleSelect1">Lieu</label>
-                  	<select class="form-control" id="lieu">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                  	<select class="form-control" id="lieu1">
+                    <option></option>
+                    <?php
+						for($i=0;$i<count($lieux);$i++)
+						{
+							echo '<option>'.$lieux[$i]['name'].'</option>';	
+						}
+					?>
                     </select>
 		            <br>
-		            <input type="time" class="form-control" placeholder="Heure Debut" name="HeureDebut">
+		            <input type="time" class="form-control" placeholder="Heure Debut" name="HeureDebut1">
 		            <br>
-                    <input type="time" class="form-control" placeholder="Heure Fin" name="HeureFin">
-		            <br>
+                    <input type="time" class="form-control" placeholder="Heure Fin" name="HeureFin1">
 		            <label class="checkbox"> <span class="pull-right"> </span>
 		            </label>
-		            <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit"><i class="fa fa-plus"></i> Ajouter configuration</button>
+                    
+                    <hr>
+                    <p>Etape 2</p>
+                    <label for="exampleSelect1">Type</label>
+                  	<select class="form-control" id="Type2">
+                      <option>Apero</option>
+                      <option>Repas</option>
+                      <option>After</option>
+                    </select>
+		            <br>
+                    <label for="exampleSelect1">Lieu</label>
+                  	<select class="form-control" id="lieu2">
+                    <option></option>
+                    <?php
+						for($i=0;$i<count($lieux);$i++)
+						{
+							echo '<option>'.$lieux[$i]['name'].'</option>';	
+						}
+					?>
+                    </select>
+		            <br>
+		            <input type="time" class="form-control" placeholder="Heure Debut" name="HeureDebut2">
+		            <br>
+                    <input type="time" class="form-control" placeholder="Heure Fin" name="HeureFin2">
+		            <label class="checkbox"> <span class="pull-right"> </span>
+		            </label>
+                    
+                    <hr>
+                    <p>Etape 3</p>
+                    <label for="exampleSelect1">Type</label>
+                  	<select class="form-control" id="Type3">
+                      <option>Apero</option>
+                      <option>Repas</option>
+                      <option>After</option>
+                    </select>
+		            <br>
+                    <label for="exampleSelect1">Lieu</label>
+                  	<select class="form-control" id="lieu3">
+                    <option></option>
+                    <?php
+						for($i=0;$i<count($lieux);$i++)
+						{
+							echo '<option>'.$lieux[$i]['name'].'</option>';	
+						}
+					?>
+                    </select>
+		            <br>
+		            <input type="time" class="form-control" placeholder="Heure Debut" name="HeureDebut3">
+		            <br>
+                    <input type="time" class="form-control" placeholder="Heure Fin" name="HeureFin3">
+		            <label class="checkbox"> <span class="pull-right"> </span>
+		            </label>
+                    
+                    
+		            <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit" name="ajouterConfig"><i class="fa fa-plus"></i> Ajouter configuration</button>
+                    <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit" name="panel"><i class="fa fa-check"></i> Valider la Soirée</button>
 		      </form>	 
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
