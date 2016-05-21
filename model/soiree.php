@@ -21,6 +21,16 @@ function getSoiree()
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);
 }
+//Soiree plus en vote
+function getSoireeVoteFermerById($idSoiree)
+{
+	global $bdd;
+
+	$answer = $bdd->prepare("SELECT IdSoiree,NomSoiree,DateSoiree FROM Soiree WHERE DateFermetureVote < now() and DateSoiree > now() AND IdSoiree = ?");
+	$answer->execute(array($idSoiree));
+	$data = $answer->fetch(PDO::FETCH_ASSOC);
+	return($data);
+}
 //get info soiree idSoiree
 function getSoireeInfoById($idSoiree)
 {

@@ -4,7 +4,7 @@ function getEtapes($idConfig)
 {
 	global $bdd;
 	
-	$answer = $bdd->prepare("SELECT HeureDebut, HeureFin, Etape.IdLieu, lieux.* Type FROM Etape INNER JOIN lieux ON Etape.IdLieu = lieux.idLieu WHERE IdConfig = ?");
+	$answer = $bdd->prepare("SELECT HeureDebut, HeureFin, Etape.IdLieu, lieux.* FROM Etape INNER JOIN lieux ON Etape.IdLieu = lieux.idLieu WHERE IdConfig = ?");
 	$data = $answer->execute(array($idConfig));
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return $data;
