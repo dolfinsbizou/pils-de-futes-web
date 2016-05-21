@@ -5,7 +5,7 @@
 	if (!isLogged())
 		Header("Location: ./");
 
-	else if (!isAdmin(getUserId()))
+	else if (!isAdmin(getUserID()))
 		Header("Location: ./");
 
 	else 
