@@ -62,9 +62,10 @@
             <div class="row mt">
               <div class="col-md-12">
                 <div class="content-panel">
-                    <h4><i class="fa fa-angle-right"></i> Soirées </h4>
-                    <hr>
-                  <a href="ajouterSoiree.php" class="btn btn-theme03">Ajouter une Soirée</a>
+                 <h4><i class="fa fa-angle-right"></i> Que voulez-vous faire ?</h4>
+                 <hr>
+                  <a href="ajouterSoiree.php" class="btn btn-theme03" style="margin:0px 0px 10px 10px;">Ajouter une Soirée</a>
+                  <a href="suppressionSoiree.php" class="btn btn-theme04" style="margin:0px 0px 10px 10px;">Supprimer une Soirée</a>
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
             </div>

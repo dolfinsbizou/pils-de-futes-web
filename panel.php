@@ -13,5 +13,6 @@
 		Header("Location: ./");
 		exit(0);
 	}
-
+	$user = getInfosUsersById($_SESSION['session_id']);
+	$page_title = "Panel Admin";
 	include_once("view/panel.php");
