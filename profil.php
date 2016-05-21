@@ -3,7 +3,7 @@ include_once("model/sessions.php");
 include_once("model/membres.php");
 if(isLogged())
 {
-	$data = getUserInfoById(getUserId());
+	$data = getInfosUsersById(getUserId());
 	$uid = getUserId();
 }else {
 	header('Location: ./');
