@@ -46,7 +46,7 @@ function getHistSoiree()
 	
 	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree,DateSoiree FROM Soiree WHERE DateSoiree < now()");
 	$answer->execute([]);
-	$data = $answer->fetch(PDO::FETCH_ASSOC);
+	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);
 }
 ?>
