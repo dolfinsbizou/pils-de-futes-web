@@ -10,4 +10,15 @@ function getEtape($idEtape, $idConfig)
 	return($data);
 }
 
+function addEtape($heureDebut, $heureFin, $idLieu, $idConfig)
+{
+	global $bdd;
+	
+	$req = $bdd->prepare("INSERT INTO Etape (HeureDebut, HeureFin, IdLieu, IdConfig) VALUES (:heureDebut ,:heureFin, :idLieu, :idConfig)");
+	$req->bindParam(':heureDebut', $heureDebut);
+	$req->bindParam(':heureFin', $heureFin);
+	$req->bindParam(':idLieu', $idLieu);
+	$req->bindParam(':idConfig', $idConfig);
+	$req->execute();
+}
 ?>
