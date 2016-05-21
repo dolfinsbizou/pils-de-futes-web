@@ -8,6 +8,8 @@
 		$req = $bdd->prepare('INSERT INTO Configuration (IdSoiree, Commentaire) VALUES (:idSoiree, :commentaire)');
 		$req->bindParam(':idSoiree', $idSoiree);
 		$req->bindParam(':commentaire', $commentaire);
+		$ret = $bdd->query('SELECT MAX(IdConfig) FROM Configuration');
+		return $ret->fetch()[0];
 	}
 
 	function addVote($idConfig)
