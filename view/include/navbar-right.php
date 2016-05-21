@@ -25,6 +25,15 @@
                     <span>Historique des soirées</span>
                 </a>
             </li>
+
+            <?php if( $user['Admin'] == 1) : ?>
+            <li>
+                <a href="panel.php">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Panneau d'administration</span>
+                </a>
+            </li>
+            <?php endif; ?>
         </ul>
         <!-- sidebar menu end-->
     </div>
