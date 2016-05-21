@@ -23,3 +23,11 @@
 
 		return $res;
 	}
+
+	function addVote($idConfig,$idSoiree)
+	{
+		global $bdd;
+
+		$req = $bdd->prepare('INSERT INTO Vote VALUES (?, ?)');
+		$req->execute(array($idConfig, $idSoiree));
+	}

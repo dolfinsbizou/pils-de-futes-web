@@ -60,12 +60,14 @@ function getHistSoiree()
 	return($data);
 }
 //ajouter une soiree
-function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembre)
+function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $nomSoiree, $idMembre)
 {
 	global $bdd;
 	
-	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre) VALUES (?, ?, ?, ?)');
-	$req->execute(array($dateOuvertureVote,$dateFermetureVote,$dateSoiree,$idMembre));
+	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, NomSoiree, IdMembre) VALUES (?, ?, ?, ?, ?)');
+	$req->execute(array($dateOuvertureVote,$dateFermetureVote,$dateSoiree,$nomSoiree, $idMembre));
+	$ret = $bdd->query('SELECT MAX(IdSoiree) FROM Soiree');
+	return $ret->fetch()[0];
 }
 //toutes les soirees pas encore passee 
 function getFuturSoiree()
