@@ -51,6 +51,7 @@ function getHistSoiree()
 }
 
 function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembre)
+{
 	global $bdd;
 	
 	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre) VALUES (:dateOuvertureVote, :dateFermetureVote, :dateSoiree, :idMembre)');
@@ -59,4 +60,5 @@ function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembr
 			'dateFermetureVote' => $dateFermetureVote,
 			'dateSoiree' => $dateSoiree,
 			'idMembre' => $idMembre));
-?>
+}
+
