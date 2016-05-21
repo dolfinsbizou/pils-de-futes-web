@@ -80,7 +80,7 @@
                         </div>
                     </form>
                 </div><! --/content-panel -->
-                <?php if(!$votesClos) : ?>
+                <?php if(!$votesClos && !aVoteSoiree(getUserID(), $_GET['idSoiree']) ) : ?>
                   <div class="form-panel">
                       <h4><i class="fa fa-angle-right"></i> Votez pour votre configuration préférée</h4>
                       <hr>
@@ -110,6 +110,10 @@
                         <button class="btn btn-theme btn-block" href="valideVote.php" type="submit"><i class="fa fa-plus"></i> Voter</button>
                     </form>
                   </div><! --/content-panel -->
+                <?php else: ?>
+                  <div class="form-panel">
+                      <h4><i class="fa fa-angle-right"></i> Les votes sont clos ou vous avez déjà voté pour cette soirée</h4>
+                  </div>
                 <?php endif; ?>
               </div><!-- /col-md-12 -->
             </div>

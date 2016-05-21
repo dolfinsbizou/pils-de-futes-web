@@ -26,6 +26,13 @@
                 </a>
             </li>
 
+            <li>
+                <a href="view/map.php">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Map</span>
+                </a>
+            </li>
+
             <?php if( $user['Admin'] == 1) : ?>
             <li>
                 <a href="panel.php">

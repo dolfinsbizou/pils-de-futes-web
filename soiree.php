@@ -3,6 +3,7 @@ include_once("model/sessions.php");
 include_once("model/soiree.php");
 include_once("model/config.php");
 include_once("model/etape.php");
+include_once("model/vote.php");
 
 if(isLogged() AND isset($_GET['idSoiree']))
 {

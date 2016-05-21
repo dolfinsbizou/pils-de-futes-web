@@ -10,7 +10,7 @@
 		$req->bindParam(':commentaire', $commentaire);
 	}
 
-	function addVote($idConfig)
+	function addVoteConfig($idConfig)
 	{
 		global $bdd;
 

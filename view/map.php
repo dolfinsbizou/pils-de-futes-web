@@ -7,7 +7,15 @@
 	<style type="text/css">
 		html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 	</style>
-
+	 <!-- Bootstrap core CSS -->
+    <link href="view/assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="view/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
+    <!-- Custom styles for this template -->
+    <link href="view/assets/css/style.css" rel="stylesheet">
+    <link href="view/assets/css/style-responsive.css" rel="stylesheet">
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBHCse21R9FtDTrRnTsMvm8sKuMsva6uWw"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -73,7 +81,7 @@
 				var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
 
 				var mapOptions = {
-	        		center: { lat: 45.5602804, lng: -73.8516123},
+	        		center: { lat: 45.5242118, lng: -73.526829},
 	        		panControl:true,
 	        		mapTypeControlOptions: {
 	        			mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
@@ -156,6 +164,7 @@
 
 
 	<body style="margin-top:50px;">
+		<a class="btn btn" href="../index.php">Retour Site</a>
 		<div id="map-canvas"></div>
 		<div id="content"></div>
 	</body>
