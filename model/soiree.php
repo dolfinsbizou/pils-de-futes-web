@@ -22,11 +22,11 @@ function getSoiree()
 	return($data);
 }
 //get info soiree idSoiree
-function getSoireeInfoById($idSoiree,$idMembre)
+function getSoireeInfoById($idSoiree)
 {
 	global $bdd;
 
-	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree,DateSoiree FROM Soiree WHERE IdSoiree = ? AND IdMembre = ?");
+	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree,DateSoiree FROM Soiree WHERE IdSoiree = ?");
 	$answer->execute(array($idSoiree,$idMembre));
 	$data = $answer->fetch(PDO::FETCH_ASSOC);
 	return($data);

@@ -5,7 +5,7 @@ include_once("model/soiree.php");
 if(isLogged() AND isset($_GET['idSoiree']))
 {
 	$idSoiree = $_GET['idSoiree'];
-	if(!($data = getSoireeInfoById($idSoiree,getUserID())))
+	if(!($data = getSoireeInfoById($idSoiree)))
 	{
 		header('Location: ./');
 	}
