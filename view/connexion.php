@@ -22,7 +22,7 @@
   <body>
 	  <div id="login-page">
 	  	<div class="container">
-		      <form class="form-login" action="validationConnexion.php">
+		      <form class="form-login" action="validationConnexion.php" method="post">
 		        <h2 class="form-login-heading">CONNECTE TOI</h2>
 		        <div class="login-wrap">
                     <?php if($_GET['err']) : ?>
