@@ -16,5 +16,5 @@
 	}
 	$user = getInfosUsersById($_SESSION['session_id']);
 
-$page_title = "ajouterSoiree";
+$page_title = "Ajouter une Soiree";
 include_once("view/ajouterSoiree.php");

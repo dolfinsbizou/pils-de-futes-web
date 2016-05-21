@@ -12,7 +12,7 @@
 		return $ret->fetch()[0];
 	}
 
-	function addVote($idConfig)
+	function addVoteConfig($idConfig)
 	{
 		global $bdd;
 

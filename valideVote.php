@@ -1,6 +1,6 @@
 <?php
 
-	include_once("model/sessions");
+	include_once("model/sessions.php");
 	include_once("model/vote.php");
 
 
