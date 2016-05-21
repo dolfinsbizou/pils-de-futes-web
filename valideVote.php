@@ -4,6 +4,6 @@
 
 	if (!empty($_POST))
 		addVote($_POST["idSoiree"], $_POST["choixVote"]);
-	
-	Header('Location: panel.php');
+
+	Header('Location: soiree.php?id='.$_POST["idSoiree"]);
 
