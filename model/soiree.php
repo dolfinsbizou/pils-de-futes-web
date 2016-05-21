@@ -49,7 +49,7 @@ function getHistSoiree()
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);
 }
-
+//ajouter une soiree
 function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembre)
 {
 	global $bdd;
@@ -57,4 +57,15 @@ function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembr
 	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre) VALUES (?, ?, ?, ?)');
 	$req->execute(array($dateOuvertureVote,$dateFermetureVote,$dateSoiree,$idMembre));
 }
+//toutes les soirees pas encore passee 
+function getFuturSoiree()
+{
+	global $bdd;
+	
+	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree, DateOvertureSoiree, DateFermetureSoiree, DateSoiree FROM Soiree WHERE DateSoiree > now()");
+	$answer->execute([]);
+	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
+	return($data);
+}
+
 
