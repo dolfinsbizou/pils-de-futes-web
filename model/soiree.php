@@ -26,9 +26,9 @@ function getSoireeInfoById($idSoiree,$idMembre)
 {
 	global $bdd;
 
-	$answer = $bdd->prepare("SELECT NomSoiree,DateSoiree FROM Soiree WHERE IdSoiree = ? AND IdMembre = ?");
+	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree,DateSoiree FROM Soiree WHERE IdSoiree = ? AND IdSoiree = ?");
 	$answer->execute(array($idSoiree,$idMembre));
-	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
+	$data = $answer->fetch(PDO::FETCH_ASSOC);
 	return($data);
 }
 //suppresion d'une soiree
