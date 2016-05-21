@@ -48,8 +48,8 @@
 		global $bdd;
 
 		$query = $bdd->prepare('SELECT Admin FROM Membres WHERE IdMembre = ?');
-		$query->execute(array($admin));
+		$query->execute(array($idMembre));
 		$testAdmin = $query->fetch(PDO::FETCH_ASSOC);
-		return $testAdmin ? true : false;
+		return $testAdmin["Admin"]==1 ? true : false;
 	}
 ?>
