@@ -37,6 +37,6 @@ function supprimerSoiree($IdSoiree)
 		global $bdd;
 
 		$answer = $bdd->prepare("DELETE FROM Soiree WHERE IdSoiree = ?");
-		$answer->execute([$IdSoiree]);
+		$answer->execute($IdSoiree);
 }
 ?>
