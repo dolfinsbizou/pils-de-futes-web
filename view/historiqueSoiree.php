@@ -84,7 +84,7 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <?php foreach($soireeFinVote as $s) :?>
+                      <?php foreach($historique as $s) :?>
                       <tr>
                         <td> <?= $s['NomSoiree'] ?></td>
                         <td>
