@@ -11,7 +11,7 @@
 	else 
 	{	
 		
-		$page_title = "ajouterConfig";
+		$page_title = "Ajouter une Configuration";
 		$user = getInfosUsersById($_SESSION['session_id']);
 		$lieux = getLieuIdName();
 		include_once("view/ajouterConfig.php");
