@@ -63,7 +63,7 @@
               <div class="col-md-12">
                 <div class="content-panel">
                  <form class="form-login" action="ajouterConfig.php" method="post">
-		        <h2 class="form-login-heading">Ajouter une Soirée</h2>
+		        <h2 class="form-login-heading">Ajouter une Cconfiguration</h2>
 		        <div class="login-wrap">
                     <?php if(isset($_GET['err'])) : ?>
                     <div class="alert alert-danger" role="alert">
@@ -85,13 +85,25 @@
                         endswitch; ?>
                     </div>
                     <?php endif;?>
-                    <input type="text" class="form-control" placeholder="Nom de la Soiree" name="NomSoiree" autofocus>
+                    <label for="exampleSelect1">Type</label>
+                  	<select class="form-control" id="Type">
+                      <option>Apero</option>
+                      <option>Repas</option>
+                      <option>After</option>
+                    </select>
 		            <br>
-		            <input type="date" class="form-control" placeholder="Date Ouverture Vote" name="DateOuvertureVote">
+                    <label for="exampleSelect1">Lieu</label>
+                  	<select class="form-control" id="lieu">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
 		            <br>
-                    <input type="date" class="form-control" placeholder="Date Fermeture Vote" name="DateFermetureVote">
+		            <input type="time" class="form-control" placeholder="Heure Debut" name="HeureDebut">
 		            <br>
-                    <input type="date" class="form-control" placeholder="Date Soirée" name="DateSoiree">
+                    <input type="time" class="form-control" placeholder="Heure Fin" name="HeureFin">
 		            <br>
 		            <label class="checkbox"> <span class="pull-right"> </span>
 		            </label>
