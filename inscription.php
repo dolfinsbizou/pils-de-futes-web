@@ -1,7 +1,7 @@
 <?php
 include_once("model/sessions.php");
 if(isLogged())
-	header("Location: ./");
+	Header("Location: ./");
 else
 {
 	if(isset($_GET['err']))
