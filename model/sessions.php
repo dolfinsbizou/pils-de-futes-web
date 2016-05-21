@@ -9,9 +9,9 @@ include_once($PROJECT_ROOT . "model/soiree.php");
 /**
  *  * Retourne vrai si l'id associé au mot de passe entrés en paramètre existe dans la BDD
  *   */
-function isValidD($n, $p)
+function isValidID($n, $p)
 {	
-	if(($u = getInfoUsersById($n)) != null)
+	if(($u = getInfosUsersById($n)) != null)
 		if($u['Mdp'] == $p)
 			return true;
 	return false;
@@ -22,14 +22,14 @@ function isValidD($n, $p)
  *   */
 function isLogged()
 {
-	if(isset($_SESSION['session_id']) AND isset($_SESSION['session_pswd']) AND isValidID($_SESSION['session_id'], $_SESSION['session_pswd']))
+	if(isset($_SESSION['session_id']) AND isset($_SESSION['session_password']) AND isValidID($_SESSION['session_id'], $_SESSION['session_password']))
 	{
 		return true;
 	}
 	else
 	{
 		unset($_SESSION['session_id']);
-		unset($_SESSION['session_pswd']);
+		unset($_SESSION['session_password']);
 		return false;
 	}
 }
