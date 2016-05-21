@@ -13,7 +13,6 @@ if(isLogged())
 $data['NomMembre'] = htmlspecialchars($data['NomMembre']);
 $data['PrenomMembre'] = htmlspecialchars($data['PrenomMembre']);
 $data['Email'] = htmlentities($data['Email']);
-$data['Admin'] = htmlspecialchars($data['Admin']);
 
 $page_title = 'Profil de '.$data['PrenomMembre'].' ' . $data['NomMembre'];
 include_once("view/profil.php");
