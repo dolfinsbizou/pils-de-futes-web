@@ -1,7 +1,7 @@
 <?php
 include_once($PROJECT_ROOT . "model/connectBdd.php");
 
-//Soirees encore en vote
+//Soiree encore en vote
 function getSoireeVote()
 {
 	global $bdd;
@@ -26,17 +26,27 @@ function getSoireeInfoById($idSoiree,$idMembre)
 {
 	global $bdd;
 
-	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree,DateSoiree FROM Soiree WHERE IdSoiree = ? AND IdSoiree = ?");
+	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree,DateSoiree FROM Soiree WHERE IdSoiree = ? AND IdMembre = ?");
 	$answer->execute(array($idSoiree,$idMembre));
 	$data = $answer->fetch(PDO::FETCH_ASSOC);
 	return($data);
 }
 //suppresion d'une soiree
-function supprimerSoiree($IdSoiree)
+function supprimerSoiree($idSoiree)
 {
 		global $bdd;
 
 		$answer = $bdd->prepare("DELETE FROM Soiree WHERE IdSoiree = ?");
-		$answer->execute($IdSoiree);
+		$answer->execute($idSoiree);
+}
+//historique soiree
+function getHistSoiree()
+{
+	global $bdd;
+	
+	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree,DateSoiree FROM Soiree WHERE DateSoiree < now()");
+	$answer->execute([]);
+	$data = $answer->fetch(PDO::FETCH_ASSOC);
+	return($data);
 }
 ?>
