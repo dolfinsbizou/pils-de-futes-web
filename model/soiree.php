@@ -62,7 +62,7 @@ function getFuturSoiree()
 {
 	global $bdd;
 	
-	$answer = $bdd->prepare("SELECT IdSoiree, NomSoiree, DateOvertureSoiree, DateFermetureSoiree, DateSoiree FROM Soiree WHERE DateSoiree > now()");
+	$answer = $bdd->prepare("SELECT IdSoiree, DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre, NomSoiree FROM Soiree WHERE DateSoiree > now()");
 	$answer->execute([]);
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);

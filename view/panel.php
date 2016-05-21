@@ -86,7 +86,6 @@
                       <?php endforeach; ?>
                       </tbody>
                   </table>
-                  <a href="ajouterSoiree.php" class="btn btn-theme03" style="margin:0px 0px 10px 10px;">Ajouter une Soirée</a>
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
             </div>
