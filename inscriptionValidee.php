@@ -1,5 +1,5 @@
 <?php
+	include_once("model/sessions.php");
+	include_once("model/membres.php");
 
 
-$page_title = "Inscription validée";
-$include_once("view/inscriptionValidee.php");
