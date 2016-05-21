@@ -25,6 +25,18 @@
 		global $bdd;
 
 		$query = $bdd->prepare('SELECT nbVote FROM Configuration WHERE IdConfig = :idConfig');
+		return $query->execute(array(
+				'idConfig' => $idConfig))->fetch();
+	}
+
+	function getConfigsBySoiree($idSoiree)
+	{
+		global $bdd;
+
+		$query = $bdd->prepare('SELECT IdConfig, Commentaire, nbVote FROM Configuration WHERE IdSoiree = :idSoiree');
 		$query->execute(array(
-				'idConfig' => $idConfig));
+				'idSoiree' => $idSoiree));
+
+		return $query->fetchAll();
+
 	}
