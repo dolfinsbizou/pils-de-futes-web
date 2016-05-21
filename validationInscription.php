@@ -17,6 +17,7 @@
 	{
 		addUser($_POST['email'], $_POST['mdp'], $_POST['nomMembre'], $_POST['prenomMembre']);
 		$_POST['nomMembre'] = htmlspecialchars($_POST['nomMembre']);
-			
-		header('Location: ./');
+
+		Header('Location: ./');
 	}
+
