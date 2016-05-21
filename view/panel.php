@@ -64,8 +64,29 @@
                 <div class="content-panel">
                  <h4><i class="fa fa-angle-right"></i> Que voulez-vous faire ?</h4>
                  <hr>
+                 <a href="ajouterSoiree.php" class="btn btn-theme03" style="margin:0px 0px 10px 10px;">Ajouter une Soirée</a>
+                 <h4><i class="fa fa-angle-right"></i> Toutes les Soirées</h4>
+                 <hr>
+                 <table class="table">
+                      <thead>
+                      <tr>
+                          <th>Nom de la soirée</th>
+                          <th>Date de la soirée</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <?php foreach($historique as $s) :?>
+                      <tr>
+                        <td> <?= $s['NomSoiree'] ?></td>
+                        <td>
+                          <?php $date = new DateTime($s['DateSoiree']); ?>
+                          <?= $date->format('d/m/Y').' à '.$date->format('H:i:s') ?>
+                        </td>
+                      </tr>
+                      <?php endforeach; ?>
+                      </tbody>
+                  </table>
                   <a href="ajouterSoiree.php" class="btn btn-theme03" style="margin:0px 0px 10px 10px;">Ajouter une Soirée</a>
-                  <a href="suppressionSoiree.php" class="btn btn-theme04" style="margin:0px 0px 10px 10px;">Supprimer une Soirée</a>
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
             </div>
