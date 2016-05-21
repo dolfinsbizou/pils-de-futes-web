@@ -11,6 +11,15 @@
 		$data = $answer->fetch(PDO::FETCH_ASSOC);
 		return($data);	
 	}
+	function getInfosUsersByEmail($Email)
+	{
+		global $bdd;
+
+		$answer = $bdd->prepare("SELECT IdMembre, NomMembre, PrenomMembre, Email, Mdp, Admin FROM Membres WHERE Email = ?");
+		$answer->execute(array($Email));
+		$data = $answer->fetch(PDO::FETCH_ASSOC);
+		return($data);	
+	}
 
 	function isExistingEmail($email)
 	{
