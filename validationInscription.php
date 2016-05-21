@@ -15,7 +15,7 @@
 		Header('Location : inscription.php?err=4');
 	else
 	{
-		addUser($_POST['email'], $_POST['prenomMembre'], $_POST['nomMembre'], $_POST['mdp']);
+		addUser($_POST['email'], $_POST['mdp'], $_POST['nomMembre'], $_POST['prenomMembre']);
 		$_POST['nomMembre'] = htmlspecialchars($_POST['nomMembre']);
 			
 		header('Location: ./');
