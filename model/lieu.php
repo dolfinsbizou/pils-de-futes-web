@@ -20,4 +20,14 @@ function getLieuIdName()
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return ($data);
 }
+//id de lieu par nom
+function getLieuIdByName($name)
+{
+	global $bdd;
+	
+	$answer = $bdd->prepare("SELECT idLieu FROM lieux WHERE name = ?");
+	$answer->execute(array($name));
+	$data = $answer->fetch(PDO::FETCH_ASSOC);
+	return ($data);
+}
 ?>
