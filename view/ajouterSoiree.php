@@ -62,7 +62,7 @@
             <div class="row mt">
               <div class="col-md-12">
                 <div class="content-panel">
-                 <form class="form-login" action="ajouterConfig.php" method="post">
+                 <form class="form-login" action="validationAjoutSoiree.php" method="post">
 		        <h2 class="form-login-heading">Ajouter une Soirée</h2>
 		        <div class="login-wrap">
                     <?php if(isset($_GET['err'])) : ?>
@@ -95,7 +95,7 @@
 		            <br>
 		            <label class="checkbox"> <span class="pull-right"> </span>
 		            </label>
-		            <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit"><i class="fa fa-plus"></i> Ajouter configuration</button>
+		            <button class="btn btn-theme btn-block" href="validationAjoutSoiree.php" type="submit"><i class="fa fa-plus"></i> Ajouter configuration</button>
 		      </form>	 
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
