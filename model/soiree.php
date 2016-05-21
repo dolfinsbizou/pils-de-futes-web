@@ -66,6 +66,8 @@ function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembr
 	
 	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre) VALUES (?, ?, ?, ?)');
 	$req->execute(array($dateOuvertureVote,$dateFermetureVote,$dateSoiree,$idMembre));
+	$ret = $bdd->query('SELECT MAX(IdSoiree) FROM Soiree');
+	return $ret->fetch()[0];
 }
 //toutes les soirees pas encore passee 
 function getFuturSoiree()
