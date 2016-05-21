@@ -61,4 +61,8 @@ function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembr
 			'dateSoiree' => $dateSoiree,
 			'idMembre' => $idMembre));
 }
+<<<<<<< HEAD
 
+=======
+?>
+>>>>>>> origin/master
