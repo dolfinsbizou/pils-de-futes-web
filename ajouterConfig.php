@@ -12,5 +12,6 @@
 	{	
 		
 		$page_title = "ajouterConfig";
+		$user = getInfosUsersById($_SESSION['session_id']);
 		include_once("view/ajouterConfig.php");
 	}
