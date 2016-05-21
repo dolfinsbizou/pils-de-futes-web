@@ -15,6 +15,15 @@ if(isLogged() AND isset($_GET['idSoiree']))
 }
 $data['NomSoiree'] = htmlspecialchars($data['NomSoiree']);
 $data['DateSoiree'] = htmlspecialchars($data['DateSoiree']);
+
+$configs = getConfigsBySoiree($_GET['idSoiree']);
+
+foreach($configs as &$conf)
+{
+	$conf['Commentaire'] = htmlspecialchars($conf['Commentaire']);
+}
+
 $user = getInfosUsersById($_SESSION['session_id']);
 $page_title = "soiree " .$data['NomSoiree']. "";
 include_once("view/soiree.php");
+
