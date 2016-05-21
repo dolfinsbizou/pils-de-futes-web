@@ -1,5 +1,5 @@
 <?php
-
+include_once($PROJECT_ROOT . "model/connectBdd.php");
 function getEtape($idEtape, $idConfig)
 {
 	global $bdd;
