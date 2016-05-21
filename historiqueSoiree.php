@@ -15,8 +15,6 @@ foreach($historique as &$hist)
 	$hist['NomSoiree'] = htmlspecialchars($hist['NomSoiree']);
 }
 $user = getInfosUsersById($_SESSION['session_id']);
-$soireeVote = getSoireeVote();
-$soireeFinVote = getSoiree();
 
 $page_title = "Historique des soirées";
 include_once("view/historiqueSoiree.php");
