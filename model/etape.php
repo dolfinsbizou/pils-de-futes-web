@@ -1,13 +1,13 @@
 <?php
 include_once($PROJECT_ROOT . "model/connectBdd.php");
-function getEtape($idEtape, $idConfig)
+function getEtapes($idConfig)
 {
 	global $bdd;
 	
-	$answer = $bdd->prepare("SELECT HeureDebut, HeureFin, IdLieu, Type FROM Etape WHERE IdEtape = ? AND IdConfig = ?")
-	$data = $answer->execute(array($idEtape, $idConfig));
-	$data = $answer->fetch(PDO::FETCH_ASSOC);
-	return($data);
+	$answer = $bdd->prepare("SELECT HeureDebut, HeureFin, IdLieu, Type FROM Etape WHERE IdConfig = ?")
+	$data = $answer->execute(array($idConfig));
+	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
+	return $data;
 }
 
 function addEtape($heureDebut, $heureFin, $idLieu, $idConfig)

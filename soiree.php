@@ -1,6 +1,8 @@
 <?php
 include_once("model/sessions.php");
 include_once("model/soiree.php");
+include_once("model/config.php");
+include_once("model/etape.php");
 
 if(isLogged() AND isset($_GET['idSoiree']))
 {
@@ -18,10 +20,15 @@ $data['DateSoiree'] = htmlspecialchars($data['DateSoiree']);
 
 $configs = getConfigsBySoiree($_GET['idSoiree']);
 
+$etapes = Array();
+
 foreach($configs as &$conf)
 {
 	$conf['Commentaire'] = htmlspecialchars($conf['Commentaire']);
+	$etapes[] = getEtapes($conf['IdConfig']);
 }
+
+
 
 $user = getInfosUsersById($_SESSION['session_id']);
 $page_title = "soiree " .$data['NomSoiree']. "";

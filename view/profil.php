@@ -60,35 +60,33 @@
           <section class="wrapper site-min-height">
             <h3><i class="fa fa-angle-right"></i> <?= $page_title ?></h3>
             <div class="row mt">
-              <div class="col-md-12">
-                <div class="content-panel">
-                 <h4><i class="fa fa-angle-right"></i> Que voulez-vous faire ?</h4>
-                 <hr>
-                 <a href="ajouterSoiree.php" class="btn btn-theme03" style="margin:0px 0px 10px 10px;">Ajouter une Soirée</a>
-                 <h4><i class="fa fa-angle-right"></i> Toutes les Soirées</h4>
-                 <hr>
-                 <table class="table">
-                      <thead>
-                      <tr>
-                          <th>Nom de la soirée</th>
-                          <th>Date de la soirée</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <?php foreach($historique as $s) :?>
-                      <tr>
-                        <td> <?= $s['NomSoiree'] ?></td>
-                        <td>
-                          <?php $date = new DateTime($s['DateSoiree']); ?>
-                          <?= $date->format('d/m/Y').' à '.$date->format('H:i:s') ?>
-                        </td>
-                      </tr>
-                      <?php endforeach; ?>
-                      </tbody>
-                  </table>
-                </div><! --/content-panel -->
-              </div><!-- /col-md-12 -->
-            </div>
+              <div class="col-lg-12">
+                  <div class="form-panel">
+                      <h4 class="mb"><i class="fa fa-angle-right"></i> Informations générales</h4>
+                      <form class="form-horizontal style-form" method="get">
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Nom</label>
+                              <div class="col-sm-10">
+                                  <input class="form-control" id="disabledInput" type="text" placeholder="<?=$user['NomMembre']?>" disabled>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Prénom</label>
+                              <div class="col-sm-10">
+                                  <input class="form-control" id="disabledInput" type="text" placeholder="<?=$user['PrenomMembre']?>" disabled>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Email</label>
+                              <div class="col-sm-10">
+                                  <input class="form-control" id="disabledInput" type="text" placeholder="<?=$user['Email']?>" disabled>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div><!-- col-lg-12-->       
+            </div><!-- /row -->
+
           </section>
       </section> 
   </section>

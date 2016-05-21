@@ -56,36 +56,35 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
+      <?php $date = new DateTime($data['DateSoiree']); ?>
       <section id="main-content">
           <section class="wrapper site-min-height">
             <h3><i class="fa fa-angle-right"></i> <?= $page_title ?></h3>
             <div class="row mt">
               <div class="col-md-12">
-                <div class="content-panel">
-                 <h4><i class="fa fa-angle-right"></i> Que voulez-vous faire ?</h4>
-                 <hr>
-                 <a href="ajouterSoiree.php" class="btn btn-theme03" style="margin:0px 0px 10px 10px;">Ajouter une Soirée</a>
-                 <h4><i class="fa fa-angle-right"></i> Toutes les Soirées</h4>
-                 <hr>
-                 <table class="table">
-                      <thead>
-                      <tr>
-                          <th>Nom de la soirée</th>
-                          <th>Date de la soirée</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <?php foreach($historique as $s) :?>
-                      <tr>
-                        <td> <?= $s['NomSoiree'] ?></td>
-                        <td>
-                          <?php $date = new DateTime($s['DateSoiree']); ?>
-                          <?= $date->format('d/m/Y').' à '.$date->format('H:i:s') ?>
-                        </td>
-                      </tr>
-                      <?php endforeach; ?>
-                      </tbody>
-                  </table>
+                <div class="form-panel">
+                    <h4><i class="fa fa-angle-right"></i> Informations</h4>
+                    <hr>
+                    <form class="form-horizontal style-form" method="get">
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Nom de la soirée</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="disabledInput" type="text" placeholder="<?=$data['NomSoiree']?>" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Date de la soirée</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="disabledInput" type="text" placeholder="<?=$date->format('d/m/Y').' à '.$date->format('H:i:s') ?>" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="disabledInput" type="text" placeholder="<?=$user['Email']?>" disabled>
+                            </div>
+                        </div>
+                    </form>
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
             </div>
