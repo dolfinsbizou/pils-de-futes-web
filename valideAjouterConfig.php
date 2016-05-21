@@ -2,19 +2,20 @@
 	include_once("model/sessions.php");
 include_once("model/membres.php");
 include_once("model/etape.php");
+include_once("model/lieu.php");
 include_once("model/config.php");
 
 
-	if($_POST['submit'] == "panel")
+	if(isset($_POST['panel']))
 	{
 		Header('Location: panel.php');
 	}
-	else if(empty($_POST['idSoiree']) or empty($_POST['commentaire']))
-		Header('Location: ajouterConfig.php?err=1');
+	else if(empty(empty($_POST['commentaire'])))
+		Header('Location: ajouterConfig.php?err=1&id=' . $_GET['id']);
 
-	else if(!empty($_POST['HeureDebut1']) && !empty($_POST['HeureFin1']))
+	else if(!empty($_POST['HeureDebut1']) || !empty($_POST['HeureFin1']))
 	{
-		$ret = addConfig($_POST['idSoiree'], $_POST['commentaire']);
+		$ret = addConfig($_GET['id'], $_POST['Commentaire']);
 		
 		addEtape($_POST['HeureDebut1'], $_POST['HeureFin1'], getLieuIdByName($_POST['lieu1']), $ret);
 
