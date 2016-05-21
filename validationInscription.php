@@ -17,7 +17,6 @@
 	{
 		addUser($_POST['nomMembre'], $_POST['prenomMembre'], $_POST['email'], $_POST['mdp']);
 		$_POST['nomMembre'] = htmlspecialchars($_POST['nomMembre']);
-		$page_title = 'Bienvenue ' . $_POST['nomMembre'] . ' !';
 			
 		Header('Location: inscriptionValidee.php');
 	}
