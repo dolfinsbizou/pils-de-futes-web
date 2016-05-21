@@ -160,8 +160,8 @@
 		            </label>
                     
                     
-		            <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit"><i class="fa fa-plus"></i> Ajouter configuration</button>
-                    <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit"><i class="fa fa-check"></i> Valider la Soirée</button>
+		            <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit" name="ajouterConfig"><i class="fa fa-plus"></i> Ajouter configuration</button>
+                    <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit" name="panel"><i class="fa fa-check"></i> Valider la Soirée</button>
 		      </form>	 
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
