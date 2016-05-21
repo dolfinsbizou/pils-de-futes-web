@@ -24,10 +24,10 @@
 		return $res;
 	}
 
-	function addVote($idConfig,$idSoiree)
+	function addVote($idConfig,$idMembre)
 	{
 		global $bdd;
 
 		$req = $bdd->prepare('INSERT INTO Vote VALUES (?, ?)');
-		$req->execute(array($idConfig, $idSoiree));
+		$req->execute(array($idConfig, $idMembre));
 	}
