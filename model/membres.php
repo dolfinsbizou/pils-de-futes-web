@@ -2,11 +2,11 @@
 	include_once($PROJECT_ROOT . "model/connectBdd.php");
 
 	//infos users
-	function getInfosUsersById($idMembre)
+	function getInfosUsersByEmail($idMembre)
 	{
 		global $bdd;
 
-		$answer = $bdd->prepare("SELECT NomMembre, PrenomMembre, Email, Mdp, Admin FROM Membres WHERE IdMembre = ?");
+		$answer = $bdd->prepare("SELECT IdMembre, NomMembre, PrenomMembre, Email, Mdp, Admin FROM Membres WHERE IdMembre = ?");
 		$answer->execute(array($idMembre));
 		$data = $answer->fetch(PDO::FETCH_ASSOC);
 		return($data);	
@@ -15,7 +15,7 @@
 	{
 		global $bdd;
 
-		$answer = $bdd->prepare("SELECT NomMembre, PrenomMembre, Email, Mdp, Admin FROM Membres WHERE Email = ?");
+		$answer = $bdd->prepare("SELECT IdMembre, NomMembre, PrenomMembre, Email, Mdp, Admin FROM Membres WHERE Email = ?");
 		$answer->execute(array($EmailUSers));
 		$data = $answer->fetch(PDO::FETCH_ASSOC);
 		return($data);	
