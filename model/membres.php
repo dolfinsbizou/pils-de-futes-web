@@ -2,7 +2,7 @@
 	include_once($PROJECT_ROOT . "model/connectBdd.php");
 
 	//infos users
-	function getInfosUsersById($idMembre)
+	function getInfosUsersByEmail($idMembre)
 	{
 		global $bdd;
 
