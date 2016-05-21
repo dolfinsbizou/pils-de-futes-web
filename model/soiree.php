@@ -31,4 +31,12 @@ function getSoireeInfoById($idSoiree,$idMembre)
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);
 }
+//suppresion d'une soiree
+function supprimerSoiree($IdSoiree)
+{
+		global $bdd;
+
+		$answer = $bdd->prepare("DELETE FROM Soiree WHERE IdSoiree = ?");
+		$answer->execute([$IdSoiree]);
+}
 ?>
