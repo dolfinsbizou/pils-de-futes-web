@@ -49,4 +49,14 @@ function getHistSoiree()
 	$data = $answer->fetchAll(PDO::FETCH_ASSOC);
 	return($data);
 }
+
+function addSoiree($dateOuvertureVote, $dateFermetureVote, $dateSoiree, $idMembre)
+	global $bdd;
+	
+	$req = $bdd->prepare('INSERT INTO Soiree (DateOuvertureVote, DateFermetureVote, DateSoiree, IdMembre) VALUES (:dateOuvertureVote, :dateFermetureVote, :dateSoiree, :idMembre)');
+	$req->execute(array(
+			'dateOuvertureVote' => $dateOuvertureVote,
+			'dateFermetureVote' => $dateFermetureVote,
+			'dateSoiree' => $dateSoiree,
+			'idMembre' => $idMembre));
 ?>

@@ -9,4 +9,5 @@ function getEtape($idEtape, $idConfig)
 	$data = $answer->fetch(PDO::FETCH_ASSOC);
 	return($data);
 }
+
 ?>
