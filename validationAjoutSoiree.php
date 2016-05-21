@@ -19,6 +19,6 @@ else if(empty($_POST["DateSoiree"]))
 	header('Location: ajouterSoiree.php?err=4');
 else
 {
-		$ret = addSoiree($_POST['DateOuvertureVote'], $_POST["DateFermetureVote"]), $_POST['DateSoiree'], getUserId());
+		$ret = addSoiree($_POST['DateOuvertureVote'], $_POST["DateFermetureVote"], $_POST['DateSoiree'], $_POST['NomSoiree'], getUserId());
 	header("Location: ajouterConfig.php?id=" . $ret);
 }

@@ -63,7 +63,7 @@
               <div class="col-md-12">
                 <div class="content-panel">
                  <form class="form-login" action="ajouterConfig.php" method="post">
-		        <h2 class="form-login-heading">Ajouter une Cconfiguration</h2>
+		        <h2 class="form-login-heading">Ajouter une Configuration</h2>
 		        <div class="login-wrap">
                     <?php if(isset($_GET['err'])) : ?>
                     <div class="alert alert-danger" role="alert">

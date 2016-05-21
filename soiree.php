@@ -29,6 +29,14 @@ foreach($configs as &$conf)
 }
 
 
+if( getSoireeVoteFermerById($idSoiree) )
+{
+	$votesClos = true;
+}
+else
+{
+	$votesClos = false;
+}
 
 $user = getInfosUsersById($_SESSION['session_id']);
 $page_title = "soiree " .$data['NomSoiree']. "";
