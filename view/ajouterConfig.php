@@ -94,20 +94,22 @@
 		            <br>
                     <label for="exampleSelect1">Lieu</label>
                   	<select class="form-control" id="lieu">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                    <option></option>
+                    <?php
+						for($i=0;$i<count($lieux);$i++)
+						{
+							echo '<option>'.$lieux[$i]['name'].'</option>';	
+						}
+					?>
                     </select>
 		            <br>
 		            <input type="time" class="form-control" placeholder="Heure Debut" name="HeureDebut">
 		            <br>
                     <input type="time" class="form-control" placeholder="Heure Fin" name="HeureFin">
-		            <br>
 		            <label class="checkbox"> <span class="pull-right"> </span>
 		            </label>
 		            <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit"><i class="fa fa-plus"></i> Ajouter configuration</button>
+                    <button class="btn btn-theme btn-block" href="ajouterConfig.php" type="submit"><i class="fa fa-check"></i> Valider la Soirée</button>
 		      </form>	 
                 </div><! --/content-panel -->
               </div><!-- /col-md-12 -->
