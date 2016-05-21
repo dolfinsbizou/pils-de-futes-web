@@ -84,7 +84,7 @@
                   <div class="form-panel">
                       <h4><i class="fa fa-angle-right"></i> Votez pour votre configuration préférée</h4>
                       <hr>
-                      <form class="form-horizontal style-form" method="post">
+                      <form class="form-horizontal style-form" method="post" action="valideVote.php">
                         <input type="hidden" value="<?=$_GET['idSoiree']?>">
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Configurations :</label>
