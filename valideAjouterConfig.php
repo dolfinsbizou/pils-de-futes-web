@@ -7,7 +7,7 @@
 
 	else
 	{
-		addUser($_POST['idSoiree'], $_POST['commentaire']);
+		addConfig($_POST['idSoiree'], $_POST['commentaire']);
 			
 		Header('Location: panel.php');
 	}

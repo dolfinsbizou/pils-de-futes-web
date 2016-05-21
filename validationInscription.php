@@ -2,7 +2,7 @@
 	include_once("model/sessions.php");
 	include_once("model/membres.php");
 
-	if(empty($_POST['mdp']) or empty($_POST['mdp_confirm']) or empty($_POST['email']) or empty($_POST['nomMembre']) or empty($_POST['prenomMembre'])))
+	if(empty($_POST['mdp']) or empty($_POST['mdp_confirm']) or empty($_POST['email']) or empty($_POST['nomMembre']) or empty($_POST['prenomMembre']))
 		Header('Location: inscription.php?err=1');
 
 	else if($_POST['mdp'] != $_POST['mdp_confirm'])
@@ -17,7 +17,6 @@
 	{
 		addUser($_POST['nomMembre'], $_POST['prenomMembre'], $_POST['email'], $_POST['mdp']);
 		$_POST['nomMembre'] = htmlspecialchars($_POST['nomMembre']);
-		$page_title = 'Bienvenue ' . $_POST['nomMembre'] . ' !';
-			
-		Header('Location: inscriptionValidee.php');
+
+		Header('Location: ./');
 	}

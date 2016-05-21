@@ -34,7 +34,7 @@
 	{
 		global $bdd;
 		
-		$req = $bdd->prepare('INSERT INTO users(Email, Mdp, NomMembre, PrenomMembre) VALUES (:email, :mdp, :nomMembre, :prenomMembre)');
+		$req = $bdd->prepare('INSERT INTO Membres (Email, Mdp, NomMembre, PrenomMembre) VALUES (:email, :mdp, :nomMembre, :prenomMembre)');
 		$req->execute(array(
 				'email' => $email,
 				'mdp' => sha1($mdp),
