@@ -80,14 +80,37 @@
                         </div>
                     </form>
                 </div><! --/content-panel -->
-                <div class="form-panel">
-                    <h4><i class="fa fa-angle-right"></i> Configurations</h4>
-                    <hr>
-                    <?php
-                    var_dump($configs);
-                    var_dump($etapes);
-                    ?>
-                </div><! --/content-panel -->
+                <?php if(!$votesClos) : ?>
+                  <div class="form-panel">
+                      <h4><i class="fa fa-angle-right"></i> Votez pour votre configuration préférée</h4>
+                      <hr>
+                      <form class="form-horizontal style-form" method="post">
+                        <input type="hidden" value="<?=$_GET['idSoiree']?>">
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Configurations :</label>
+                            <div class="col-sm-10">
+                                <?php $i = 0; ?>  
+                                <?php foreach($configs as $config) : ?>
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="choixVote"  value="<?=$config['IdConfig']?>">
+                                    <?php $str = ""; ?>
+                                    <?php foreach ($etapes[$i] as $etape) :
+                                      if( $etape['IdConfig'] == $config['IdConfig'] ) {
+                                        $str .= $etape['etapeType'].": " .$etape['name']." - ";
+                                      }
+                                    endforeach; ?>
+                                    <?= $str ?>
+                                  </label>
+                                </div>
+                                <?php $i++ ?>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <button class="btn btn-theme btn-block" href="valideVote.php" type="submit"><i class="fa fa-plus"></i> Voter</button>
+                    </form>
+                  </div><! --/content-panel -->
+                <?php endif; ?>
               </div><!-- /col-md-12 -->
             </div>
           </section>
