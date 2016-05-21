@@ -34,12 +34,13 @@
 	{
 		global $bdd;
 		
-		$req = $bdd->prepare('INSERT INTO users(Email, Mdp, NomMembre, PrenomMembre) VALUES (:email, :mdp, :nomMembre, :prenomMembre)');
-		$req->execute(array(
-				'email' => $email,
-				'mdp' => sha1($mdp),
-				'nomMembre' => $nomMembre,
-				'prenomMembre' => $prenomMembre));
+		$mdp = sha1($mdp);
+		$req = $bdd->prepare("INSERT INTO Membres (Email, Mdp, NomMembre, PrenomMembre) VALUES (:email ,:mdp, :nomMembre,:prenomMembre)");
+		$req->bindParam(':email', $email);
+		$req->bindParam(':mdp', $mdp);
+		$req->bindParam(':nomMembre', $nomMembre);
+		$req->bindParam(':prenomMembre', $prenomMembre);
+		$req->execute();	
 	}
 
 	function isAdmin($idMembre)
