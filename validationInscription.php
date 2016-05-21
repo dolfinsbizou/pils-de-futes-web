@@ -11,7 +11,7 @@
 	else if(!preg_match('#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,}$#', strtolower($_POST['email'])))
 		Header('Location: inscription.php?err=3');
 
-	else if(!empty(getInfoUsersByEmail($_POST['email'])))) //Le mail existe
+	else if(isExistingEmail($_POST['email'])) //Le mail existe
 		Header('Location : inscription.php?err=4');
 	else
 	{
