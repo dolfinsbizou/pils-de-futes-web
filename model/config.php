@@ -12,7 +12,7 @@
 
 	function addVote($idConfig)
 	{
-		global $bdd
+		global $bdd;
 
 		$query = $bdd->prepare('UPDATE Configuration SET nbVote  = nbVote + 1 WHERE IdConfig = :idConfig');
 		$query->bindParam(':idConfig', $idConfig);
@@ -36,5 +36,5 @@
 				'idSoiree' => $idSoiree));
 
 		return $query->fetchAll();
-
 	}
+
